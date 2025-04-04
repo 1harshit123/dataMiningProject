@@ -9,3 +9,10 @@ dependencies = [
     "python-decouple>=3.8",
     "rich>=13.9.4",
 ]
+
+[tool.ruff]
+select = ["E", "F", "I"]
+
+[tool.ruff.isort]
+known-first-party = []
+known-third-party = []
