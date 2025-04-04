@@ -31,7 +31,7 @@ async def _fetchPostsFromSubreddit(
     #
     #     # extract only necessary info
     #
-    #     postInst["author_fullname"] = post.author_fullname
+    #     postInst["author_username"] = post.author_fullname
     #     postInst["title"] = post.title
     #     postInst["downs"] = post.downs
     #     postInst["ups"] = post.ups
@@ -51,10 +51,8 @@ async def encode_post_detail(post, posts):
 
     # extract only necessary info
 
-    postInst["author_fullname"] = (
-        post.author_fullname
-        if getattr(post, "author_fullname", None) is not None
-        else None
+    postInst["author_username"] = (
+        post.author.name if getattr(post, "author", None) is not None else None
     )
     postInst["title"] = post.title if getattr(post, "title", None) is not None else None
     postInst["downs"] = post.downs if getattr(post, "downs", None) is not None else None
@@ -119,7 +117,7 @@ async def fetchPostsFromSubreddit(subredditName: str, numberOfPosts: int):
 
 def save_to_csv(file_name: Path, posts: List[Dict[str, Any]]):
     filed_names = [
-        "author_fullname",
+        "author_username",
         "title",
         "downs",
         "ups",
