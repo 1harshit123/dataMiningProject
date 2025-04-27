@@ -6,8 +6,18 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "asyncpraw>=7.8.1",
+    "ipykernel>=6.29.5",
+    "ipython>=9.2.0",
+    "matplotlib>=3.10.1",
+    "nbformat>=5.10.4",
+    "numpy>=2.2.5",
+    "pandas>=2.2.3",
+    "plotly>=6.0.1",
     "python-decouple>=3.8",
     "rich>=13.9.4",
+    "scikit-learn>=1.6.1",
+    "scipy>=1.15.2",
+    "statsmodels>=0.14.4",
 ]
 
 [tool.ruff]
